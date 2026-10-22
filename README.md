@@ -10,7 +10,7 @@ This repository serves as a structured portfolio demonstrating low-level languag
 - **Concepts:** Memory heap variable escape, Cell objects, multi-layer functional factories, and structural metadata preservation (`functools.wraps`).
 - **Core File:** `closure_factory.py`
 
-### ⚡ [02. Async & Concurrency](./02_async_and_concurrency/) *(In Progress)*
+### ⚡ [02. Async & Concurrency](./02_async_and_concurrency/)
 - **Concepts:** The Event Loop, non-blocking I/O operations, co-routines, and task scheduling.
 
 ### 📦 [03. Generators & Custom Iterators](./03_generators_and_iterators/) *(In Progress)*

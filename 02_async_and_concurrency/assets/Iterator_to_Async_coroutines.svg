@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 940" width="980" height="940">
+  <!-- Solid White Background so it renders properly in browsers and GitHub Dark Mode -->
+  <rect width="100%" height="100%" fill="#ffffff" />
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 L 2 5 z" fill="#000000" />
+    </marker>
+    <style>
+      .rounded-box { fill: #ffffff; stroke: #000000; stroke-width: 1.3; }
+      .pill-box { fill: #ffffff; stroke: #000000; stroke-width: 1.3; }
+      .sharp-box { fill: #ffffff; stroke: #000000; stroke-width: 1.3; }
+      .arrow-line { fill: none; stroke: #000000; stroke-width: 1.3; marker-end: url(#arrow); }
+      .plain-line { fill: none; stroke: #000000; stroke-width: 1.3; }
+    </style>
+  </defs>
+
+  <!-- Title Box -->
+  <rect x="288" y="34" width="424" height="36" class="sharp-box" />
+  <text x="500" y="59" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#000000">From Iterators to Generators &amp; Coroutines</text>
+
+  <!-- Top Left: Iteration tool -->
+  <rect x="82" y="106" width="168" height="68" rx="10" ry="10" class="rounded-box" />
+  <text x="166" y="136" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#000000">Iteration tool</text>
+  <text x="166" y="155" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#000000">(for, comprehension)</text>
+
+  <!-- Top Center: .__iter__( ) -->
+  <rect x="425" y="106" width="186" height="68" rx="10" ry="10" class="rounded-box" />
+  <text x="518" y="148" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#000000">.__iter__( )</text>
+
+  <!-- Top Right: Iterable Objects -->
+  <rect x="760" y="106" width="148" height="68" rx="10" ry="10" class="rounded-box" />
+  <text x="834" y="136" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#000000">Iterable Objects</text>
+  <text x="834" y="155" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#000000">(list, tuple, dict, etc.)</text>
+
+  <!-- Arrow: Iteration tool -> .__iter__( ) -->
+  <path d="M 250 140 L 425 140" class="arrow-line" />
+
+  <!-- Arrow: Iterable Objects -> .__iter__( ) -->
+  <path d="M 760 123 L 611 123" class="arrow-line" />
+
+  <!-- Downward Arrow: .__iter__( ) -> Iterator Object (left branch) -->
+  <path d="M 469 174 L 469 304" class="arrow-line" />
+
+  <!-- Downward Arrow through 'self': .__iter__( ) -> self -> Iterator Object -->
+  <path d="M 556 174 L 556 225" class="plain-line" />
+  <rect x="522" y="225" width="68" height="28" rx="6" ry="6" class="pill-box" />
+  <text x="556" y="245" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle" fill="#000000">self</text>
+  <path d="M 556 253 L 556 304" class="arrow-line" />
+
+  <!-- Upward Return-Self Loop: Iterator Object (right top) -> .__iter__( ) (right bottom) -->
+  <path d="M 598 322 L 656 322 Q 668 322 668 310 L 668 169 Q 668 157 656 157 L 611 157" class="arrow-line" />
+
+  <!-- Center: Iterator Object -->
+  <rect x="425" y="304" width="173" height="68" rx="10" ry="10" class="rounded-box" />
+  <text x="511" y="328" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#000000">Iterator Object</text>
+  <text x="511" y="346" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#000000">(_io.TextIOWrapper,</text>
+  <text x="511" y="362" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#000000">coroutine_wrapper,</text>
+  <text x="578" y="362" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#000000">etc.)</text>
+
+  <!-- Left: repeatedly calls iterator.__next__( ) -> .__next__( ) -->
+  <path d="M 166 174 L 166 230" class="plain-line" />
+  <text x="166" y="246" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#000000">repeatedly calls</text>
+  <text x="166" y="264" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#000000">iterator.__next__( )</text>
+  <path d="M 166 273 L 166 328 Q 166 338 176 338 L 228 338" class="arrow-line" />
+
+  <!-- .__next__( ) Box -->
+  <rect x="228" y="319" width="136" height="38" rx="6" ry="6" class="pill-box" />
+  <text x="296" y="344" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle" fill="#000000">.__next__( )</text>
+
+  <!-- Arrow: Iterator Object -> .__next__( ) -->
+  <path d="M 425 338 L 364 338" class="arrow-line" />
+
+  <!-- Arrow: Iterator Object -> Generator -->
+  <path d="M 511 372 L 511 446" class="arrow-line" />
+
+  <!-- Center: Generator (val = yield value) -->
+  <rect x="425" y="446" width="170" height="68" rx="10" ry="10" class="rounded-box" />
+  <text x="510" y="476" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#000000">Generator</text>
+  <text x="510" y="495" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#000000">(val = yield value)</text>
+
+  <!-- Two-way pause / resume path between .send(value) and Generator -->
+  <path d="M 351 580 L 351 552" class="arrow-line" />
+  <text x="351" y="544" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#000000">pause</text>
+  <path d="M 351 533 L 351 490 Q 351 480 361 480 L 383 480" class="plain-line" />
+  <text x="388" y="480" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#000000" transform="rotate(90, 388, 480)">resume</text>
+  <path d="M 401 480 L 425 480" class="arrow-line" />
+
+  <!-- .send(value) Box -->
+  <rect x="304" y="580" width="95" height="52" rx="10" ry="10" class="rounded-box" />
+  <text x="351" y="611" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#000000">.send(value)</text>
+
+  <!-- Arrow: .send(value) -> Co-routine Object -->
+  <path d="M 351 632 L 351 709 Q 351 719 361 719 L 425 719" class="arrow-line" />
+
+  <!-- Blocked path between Co-routine Object and Generator -->
+  <path d="M 510 582 L 510 514" class="arrow-line" />
+  <text x="510" y="596" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#000000">.__iter__( )</text>
+  <text x="510" y="614" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#000000">.__next__( )</text>
+  <text x="510" y="636" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#e11d48" text-anchor="middle">X</text>
+  <path d="M 510 685 L 510 642" class="plain-line" />
+
+  <!-- Co-routine Object Box -->
+  <rect x="425" y="685" width="170" height="68" rx="10" ry="10" class="rounded-box" />
+  <text x="510" y="724" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#000000">Co-routine Object</text>
+
+  <!-- coro.__await__( ) Box and routing to Iterator Object -->
+  <path d="M 595 719 L 658 719 Q 668 719 668 709 L 668 625" class="plain-line" />
+  <rect x="602" y="587" width="132" height="38" rx="6" ry="6" class="pill-box" />
+  <text x="668" y="611" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#000000">coro.__await__( )</text>
+  <path d="M 668 587 L 668 355 Q 668 345 658 345 L 598 345" class="arrow-line" />
+
+  <!-- Bottom Section: Event loop(while loop) & Ready Queue -->
+  <text x="510" y="805" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#000000">Event loop(while loop)</text>
+  <rect x="370" y="814" width="280" height="68" class="sharp-box" />
+  <text x="510" y="828" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11.5" text-anchor="middle" fill="#000000">Ready Queue (List)</text>
+
+  <!-- Task - A inside Queue -->
+  <rect x="392" y="835" width="88" height="32" class="sharp-box" />
+  <text x="436" y="856" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#000000">Task - A</text>
+
+  <!-- Task - B inside Queue -->
+  <rect x="524" y="835" width="88" height="32" class="sharp-box" />
+  <text x="568" y="856" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#000000">Task - B</text>
+
+  <!-- Queue internal shift arrow -->
+  <path d="M 548 874 L 461 874 L 467 878" class="plain-line" />
+
+  <!-- Out Arrow to external Task - A -->
+  <path d="M 392 851 L 348 851" class="plain-line" />
+  <text x="336" y="855" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#000000">Out</text>
+  <path d="M 324 851 L 301 851" class="arrow-line" />
+
+  <!-- External Task - A Box -->
+  <rect x="213" y="835" width="88" height="32" class="sharp-box" />
+  <text x="257" y="856" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#000000">Task - A</text>
+
+  <!-- Arrow: External Task - A -> .send(value) -->
+  <path d="M 257 835 L 257 616 Q 257 606 267 606 L 304 606" class="arrow-line" />
+
+  <!-- Loop Back In: External Task - A bottom -> Ready Queue right -->
+  <circle cx="257" cy="867" r="2.5" fill="#000000" />
+  <path d="M 257 867 L 257 898 Q 257 908 267 908 L 755 908 Q 765 908 765 898 L 765 861 Q 765 851 755 851 L 705 851" class="plain-line" />
+  <text x="695" y="855" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#000000">In</text>
+  <path d="M 684 851 L 650 851" class="arrow-line" />
+</svg>
